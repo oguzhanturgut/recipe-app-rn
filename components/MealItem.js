@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
+import DefaultText from './DefaultText';
 
 const MealItem = (props) => {
   return (
@@ -21,9 +22,9 @@ const MealItem = (props) => {
             </ImageBackground>
           </View>
           <View style={{...styles.mealRow, ...styles.mealDetail}}>
-            <Text>{props.duration}m</Text>
-            <Text>{props.complexity.toUpperCase()}</Text>
-            <Text>{props.affordability.toUpperCase()}</Text>
+            <DefaultText>{props.duration}m</DefaultText>
+            <DefaultText>{props.complexity.toUpperCase()}</DefaultText>
+            <DefaultText>{props.affordability.toUpperCase()}</DefaultText>
           </View>
         </View>
       </TouchableOpacity>
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
     borderRadius: 10,
     overflow: 'hidden',
-    marginVertical:10
+    marginVertical: 10,
   },
   bgImage: {
     width: '100%',
@@ -45,28 +46,28 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   mealRow: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   mealHeader: {
-    height: '85%'
+    height: '85%',
   },
   mealDetail: {
     paddingHorizontal: 10,
     justifyContent: 'space-between',
     alignItems: 'center',
-    height: '15%'
+    height: '15%',
   },
   titleContainer: {
     backgroundColor: 'rgba(0,0,0,0.5)',
     paddingVertical: 5,
-    paddingHorizontal: 12
+    paddingHorizontal: 12,
   },
   title: {
     fontFamily: 'open-sans-bold',
     fontSize: 20,
     color: 'white',
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 });
 
 export default MealItem;
