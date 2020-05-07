@@ -6,11 +6,13 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import FavoritesScreen from '../screens/FavoritesScreen';
 import {Ionicons} from '@expo/vector-icons';
 import {createMaterialBottomTabNavigator} from 'react-navigation-material-bottom-tabs';
+import {createDrawerNavigator} from 'react-navigation-drawer';
 
 import CategoriesScreen from '../screens/CategoriesScreen';
 import CategoryMealScreen from '../screens/CategoryMealsScreen';
 import MealDetailScreen from '../screens/MealDetailScreen';
 import Colors from '../constants/Colors';
+import FiltersScreen from '../screens/FiltersScreen';
 
 const defaultStackNavOptions = {
   // mode: "modal",
@@ -87,4 +89,15 @@ const MealsFavTabNavigator =
           // swipeEnabled:true
         });
 
-export default createAppContainer(MealsFavTabNavigator);
+const FiltersNavigator = createStackNavigator({
+  Filters: FiltersScreen,
+});
+
+const mainNavigator = createDrawerNavigator({
+  MealsFavs:MealsFavTabNavigator,
+  Filters:FiltersNavigator
+}, {
+
+});
+
+export default createAppContainer(mainNavigator);
