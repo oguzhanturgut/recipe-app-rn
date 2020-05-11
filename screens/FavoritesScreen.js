@@ -7,7 +7,7 @@ import HeaderButton from '../components/HeaderButton';
 import {Menu} from 'react-native-paper';
 
 const FavoritesScreen = props => {
-  const favMeals = useSelector(state => state.meals.filteredMeals);
+  const favMeals = useSelector(state => state.meals.favoriteMeals);
   return <MealList listData={favMeals} navigation={props.navigation} />;
 };
 
